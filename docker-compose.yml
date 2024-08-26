@@ -1,0 +1,26 @@
+services:
+  librespeed:
+    build:
+      context: ./docker/
+      dockerfile: Dockerfile-librespeed
+    container_name: librespeed
+    env_file:
+      - ./env/.env_speedtest
+   # volumes:
+   #   - /path/to/librespeed/config:/config
+    ports:
+      - 80:80
+    restart: unless-stopped
+
+  librespeeddb:
+    container_name: librespeeddb
+    restart: always
+    build:
+      context: ./docker/  
+      dockerfile: Dockerfile-db
+    ports:
+      - "3307:3306"
+    env_file:
+      - ./env/.env_db
+    volumes:
+      - "./db/db_data:/var/lib/mysql"
