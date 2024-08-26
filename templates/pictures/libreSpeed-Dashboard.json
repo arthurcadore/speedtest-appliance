@@ -135,7 +135,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 7,
+        "h": 8,
         "w": 19,
         "x": 0,
         "y": 0
@@ -215,7 +215,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 7,
+        "h": 8,
         "w": 5,
         "x": 19,
         "y": 0
@@ -301,10 +301,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 7,
+        "h": 8,
         "w": 4,
         "x": 0,
-        "y": 7
+        "y": 8
       },
       "id": 10,
       "options": {
@@ -386,10 +386,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 7,
+        "h": 8,
         "w": 4,
         "x": 4,
-        "y": 7
+        "y": 8
       },
       "id": 12,
       "options": {
@@ -414,7 +414,7 @@
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
-          "rawSql": "SELECT \r\n    AVG(CAST(dl AS DECIMAL(10, 2))) AS 'Velocidade Média de Download (Mbps)'\r\nFROM \r\n    speedtest_users\r\n",
+          "rawSql": "SELECT \r\n    AVG(CAST(ul AS DECIMAL(10, 2))) AS 'Velocidade Média de Upload (Mbps)'\r\nFROM \r\n    speedtest_users\r\n",
           "refId": "A",
           "sql": {
             "columns": [
@@ -435,7 +435,7 @@
           }
         }
       ],
-      "title": "Avarage Download Rate (Mbps)",
+      "title": "Avarage Upload Rate (Mbps)",
       "transparent": true,
       "type": "gauge"
     },
@@ -475,10 +475,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 7,
+        "h": 8,
         "w": 4,
         "x": 8,
-        "y": 7
+        "y": 8
       },
       "id": 11,
       "options": {
@@ -564,10 +564,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 7,
+        "h": 8,
         "w": 4,
         "x": 12,
-        "y": 7
+        "y": 8
       },
       "id": 13,
       "options": {
@@ -665,7 +665,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "red",
+                "color": "blue",
                 "value": null
               }
             ]
@@ -675,12 +675,12 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
+        "h": 10,
         "w": 8,
         "x": 16,
-        "y": 7
+        "y": 8
       },
-      "id": 15,
+      "id": 16,
       "options": {
         "legend": {
           "calcs": [],
@@ -703,7 +703,7 @@
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
-          "rawSql": "SELECT \r\n    UNIX_TIMESTAMP(DATE_FORMAT(timestamp, '%Y-%m-%d %H:%i:00')) AS time,\r\n    AVG(CAST(jitter AS DECIMAL(10, 2))) AS 'Jitter Médio (ms)'\r\nFROM \r\n    speedtest_users\r\nGROUP BY \r\n    UNIX_TIMESTAMP(DATE_FORMAT(timestamp, '%Y-%m-%d %H:%i:00'))\r\nORDER BY \r\n    'timestamp' DESC;\r\n",
+          "rawSql": "SELECT \r\n    UNIX_TIMESTAMP(DATE_FORMAT(timestamp, '%Y-%m-%d %H:%i:00')) AS time,\r\n    AVG(CAST(ping AS DECIMAL(10, 2))) AS 'Ping Médio (ms)'\r\nFROM \r\n    speedtest_users\r\nGROUP BY \r\n    UNIX_TIMESTAMP(DATE_FORMAT(timestamp, '%Y-%m-%d %H:%i:00'))\r\nORDER BY \r\n    'timestamp' DESC;\r\n",
           "refId": "A",
           "sql": {
             "columns": [
@@ -724,7 +724,7 @@
           }
         }
       ],
-      "title": "Avarage Jitter History",
+      "title": "Avarage Ping History",
       "transparent": true,
       "type": "timeseries"
     },
@@ -761,10 +761,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 10,
+        "h": 12,
         "w": 16,
         "x": 0,
-        "y": 14
+        "y": 16
       },
       "id": 2,
       "options": {
@@ -787,7 +787,7 @@
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
-          "rawSql": "SELECT \r\n    ip AS 'IP',\r\n    dl AS 'Downlink (Mbps)',\r\n    ul AS 'Uplink (Mbps)',\r\n    ping AS 'Latência (ms)',\r\n    jitter AS 'Jitter (ms)'\r\nFROM \r\n    speedtest_users\r\nORDER BY \r\n    timestamp DESC\r\nLIMIT 10;\r\n",
+          "rawSql": "SELECT \r\n    ip AS 'IP',\r\n    dl AS 'Downlink (Mbps)',\r\n    ul AS 'Uplink (Mbps)',\r\n    ping AS 'Latency (ms)',\r\n    jitter AS 'Jitter (ms)'\r\nFROM \r\n    speedtest_users\r\nORDER BY \r\n    timestamp DESC\r\nLIMIT 10;\r\n",
           "refId": "A",
           "sql": {
             "columns": [
@@ -860,7 +860,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "blue",
+                "color": "red",
                 "value": null
               }
             ]
@@ -873,9 +873,9 @@
         "h": 9,
         "w": 8,
         "x": 16,
-        "y": 15
+        "y": 18
       },
-      "id": 16,
+      "id": 15,
       "options": {
         "legend": {
           "calcs": [],
@@ -898,7 +898,7 @@
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
-          "rawSql": "SELECT \r\n    UNIX_TIMESTAMP(DATE_FORMAT(timestamp, '%Y-%m-%d %H:%i:00')) AS time,\r\n    AVG(CAST(ping AS DECIMAL(10, 2))) AS 'Ping Médio (ms)'\r\nFROM \r\n    speedtest_users\r\nGROUP BY \r\n    UNIX_TIMESTAMP(DATE_FORMAT(timestamp, '%Y-%m-%d %H:%i:00'))\r\nORDER BY \r\n    'timestamp' DESC;\r\n",
+          "rawSql": "SELECT \r\n    UNIX_TIMESTAMP(DATE_FORMAT(timestamp, '%Y-%m-%d %H:%i:00')) AS time,\r\n    AVG(CAST(jitter AS DECIMAL(10, 2))) AS 'Jitter Médio (ms)'\r\nFROM \r\n    speedtest_users\r\nGROUP BY \r\n    UNIX_TIMESTAMP(DATE_FORMAT(timestamp, '%Y-%m-%d %H:%i:00'))\r\nORDER BY \r\n    'timestamp' DESC;\r\n",
           "refId": "A",
           "sql": {
             "columns": [
@@ -919,7 +919,7 @@
           }
         }
       ],
-      "title": "Avarage Ping History",
+      "title": "Avarage Jitter History",
       "transparent": true,
       "type": "timeseries"
     }
@@ -939,6 +939,6 @@
   "timezone": "",
   "title": "libreSpeed Dashboard",
   "uid": "kiESLOqSk",
-  "version": 1,
+  "version": 4,
   "weekStart": ""
 }
