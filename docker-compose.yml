@@ -6,8 +6,8 @@ services:
     container_name: librespeed
     env_file:
       - ./env/.env_speedtest
-   # volumes:
-   #   - /path/to/librespeed/config:/config
+    volumes:
+     - ./config/index.html:/config/www/index.html
     ports:
       - 80:80
     restart: unless-stopped
