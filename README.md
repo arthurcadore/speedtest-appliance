@@ -47,6 +47,8 @@ The "&" character creates a process id for the command inputed in, with means th
 
 Once the container is up and running, you can access the container by `http://127.0.0.1:80`. 
 
+![main](./config/pictures/example.png)
+
 --- 
 ### Stop Container: 
 To stop the running container, use the following command:
